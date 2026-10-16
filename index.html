@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore career options and discover skills with CareerPath.">
+    <title>CareerPath - Career Guidance</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <a href="#home" class="logo">Career<span>Path</span></a>
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+        >
+            ☰
+        </button>
+
+        <nav id="nav-menu" class="nav-menu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#careers" class="nav-link">Careers</a>
+            <a href="#quiz" class="nav-link">Skill Quiz</a>
+            <a href="#about" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="tagline">YOUR FUTURE STARTS HERE</p>
+                <h1>Discover Your <span>Perfect Career</span></h1>
+                <p>
+                    Explore career options, discover your interests,
+                    and take the first step toward your dream job.
+                </p>
+                <a href="#quiz" class="btn">Start Career Quiz</a>
+                <a href="#careers" class="btn btn-outline">Explore Careers</a>
+            </div>
+        </section>
+
+        <!-- Careers -->
+        <section class="section" id="careers">
+            <div class="section-heading">
+                <p class="tagline">EXPLORE YOUR OPTIONS</p>
+                <h2>Popular Career Paths</h2>
+                <p>Discover different careers and the skills they require.</p>
+            </div>
+
+            <div class="career-grid">
+
+                <article class="career-card">
+                    <div class="career-icon">💻</div>
+                    <h3>Frontend Developer</h3>
+                    <p>Build attractive and interactive websites.</p>
+                    <p class="skills"><strong>Skills:</strong> HTML, CSS, JavaScript, React</p>
+                    <button class="learn-btn" data-career="frontend">Learn More</button>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon">🐍</div>
+                    <h3>Python Developer</h3>
+                    <p>Build applications and automate tasks.</p>
+                    <p class="skills"><strong>Skills:</strong> Python, SQL, APIs</p>
+                    <button class="learn-btn" data-career="python">Learn More</button>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon">☕</div>
+                    <h3>Java Developer</h3>
+                    <p>Develop software and web applications.</p>
+                    <p class="skills"><strong>Skills:</strong> Java, SQL, OOP</p>
+                    <button class="learn-btn" data-career="java">Learn More</button>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon">📊</div>
+                    <h3>Data Analyst</h3>
+                    <p>Analyze data and discover useful insights.</p>
+                    <p class="skills"><strong>Skills:</strong> SQL, Excel, Python</p>
+                    <button class="learn-btn" data-career="data">Learn More</button>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon">🎨</div>
+                    <h3>UI/UX Designer</h3>
+                    <p>Design user-friendly digital experiences.</p>
+                    <p class="skills"><strong>Skills:</strong> Figma, Design, Research</p>
+                    <button class="learn-btn" data-career="design">Learn More</button>
+                </article>
+
+                <article class="career-card">
+                    <div class="career-icon">🔐</div>
+                    <h3>Cybersecurity Analyst</h3>
+                    <p>Help protect systems and information.</p>
+                    <p class="skills"><strong>Skills:</strong> Networking, Security</p>
+                    <button class="learn-btn" data-career="security">Learn More</button>
+                </article>
+
+            </div>
+
+            <!-- Career Details -->
+            <div id="career-details" class="details hidden" aria-live="polite">
+                <h3 id="detail-title"></h3>
+                <p id="detail-description"></p>
+                <p id="detail-skills"></p>
+                <button id="close-details" class="btn">Close Details</button>
+            </div>
+        </section>
+
+        <!-- Career Quiz -->
+        <section class="quiz-section" id="quiz">
+            <div class="quiz-box">
+                <div class="section-heading">
+                    <p class="tagline">KNOW YOURSELF</p>
+                    <h2>Career Interest Quiz</h2>
+                    <p>Answer three questions to discover a suggested career.</p>
+                </div>
+
+                <form id="career-form">
+
+                    <fieldset class="question">
+                        <legend>1. What type of work interests you?</legend>
+                        <label><input type="radio" name="interest" value="frontend" required> Building websites</label>
+                        <label><input type="radio" name="interest" value="python"> Programming and problem-solving</label>
+                        <label><input type="radio" name="interest" value="data"> Working with data and numbers</label>
+                        <label><input type="radio" name="interest" value="design"> Creative design</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>2. Which activity do you enjoy?</legend>
+                        <label><input type="radio" name="activity" value="frontend" required> Creating web pages</label>
+                        <label><input type="radio" name="activity" value="python"> Writing program logic</label>
+                        <label><input type="radio" name="activity" value="data"> Finding patterns in data</label>
+                        <label><input type="radio" name="activity" value="design"> Choosing layouts and colors</label>
+                    </fieldset>
+
+                    <fieldset class="question">
+                        <legend>3. What would you like to learn?</legend>
+                        <label><input type="radio" name="learning" value="frontend" required> HTML, CSS, JavaScript, React</label>
+                        <label><input type="radio" name="learning" value="python"> Python and application development</label>
+                        <label><input type="radio" name="learning" value="data"> SQL and data visualization</label>
+                        <label><input type="radio" name="learning" value="design"> UI/UX and interface design</label>
+                    </fieldset>
+
+                    <button type="submit" class="btn">Get Recommendation</button>
+                    <button type="reset" class="btn btn-outline">Reset Quiz</button>
+                </form>
+
+                <div id="quiz-result" class="result hidden" aria-live="polite">
+                    <h3 id="result-title"></h3>
+                    <p id="result-description"></p>
+                    <p id="result-skills"></p>
+                    <p class="disclaimer">
+                        This is a basic interest-based suggestion, not a professional career assessment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section about" id="about">
+            <div class="section-heading">
+                <p class="tagline">ABOUT CAREERPATH</p>
+                <h2>Plan Your Future With Confidence</h2>
+            </div>
+            <p>
+                CareerPath helps students explore technology careers,
+                understand required skills, and identify learning opportunities.
+            </p>
+            <p>
+                Start with your interests, build your skills, and keep learning
+                to move toward your career goals.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> CareerPath. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
